@@ -32,7 +32,6 @@ cct$dfilter
 
 # Specifically examine for missingness
 cct$dfilter$missingness$episode
-cct$get.missingness() 
 
 # Apply validation to original data
 cct$apply.filters()

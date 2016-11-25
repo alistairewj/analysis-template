@@ -9,13 +9,31 @@ NIHR_HIC_ICU_0108:
       amber: (11, 170) 
       green: (60, 100)
     apply: drop_entry
-  # missingness:
-  #   labels:
-  #     yellow: 24
-  #   accept_2d:
-  #     yellow: 70 
-  #   impute_2d:
-  #     lead: 3
-  #     lag: 3
-  #     fun: median
-  #   apply: drop_episode
+  missingness:
+    labels:
+      yellow: 24
+    accept_2d:
+      yellow: 70 
+    impute_2d:
+      lead: 3
+      lag: 3
+      fun: median
+    apply: drop_episode
+NIHR_HIC_ICU_0093:
+  shortName: sex
+  dataItem: Sex
+  distribution: binary
+  category:
+    levels: # beware case-sensitive
+      M: male
+      F: female
+NIHR_HIC_ICU_0097:
+  shortName: dead_icu
+  dataItem: Dead or alive on discharge
+  distribution: binary
+  category:
+    levels:
+      A: Alive
+      D: Dead
+      E: Alive - not discharged
+    apply: drop_entry
