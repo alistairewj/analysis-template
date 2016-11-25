@@ -1,0 +1,21 @@
+NIHR_HIC_ICU_0108:
+  shortName: hrate
+  dataItem: Heart rate
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: (0, 300)
+      amber: (11, 170) 
+      green: (60, 100)
+    apply: drop_entry
+  # missingness:
+  #   labels:
+  #     yellow: 24
+  #   accept_2d:
+  #     yellow: 70 
+  #   impute_2d:
+  #     lead: 3
+  #     lag: 3
+  #     fun: median
+  #   apply: drop_episode
