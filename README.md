@@ -25,5 +25,10 @@ Files for a minimal working example
      |-outputs      
      |-src          
         |- raw2working.R        * clean and validate `ccRecord` object
+        |- derive.R             * derive secondary variables
         |- working_inspect.R    * simple inspection of data
+
+There are two branches in this repository.
+
+The **master** branch contains a very minimal working example with just a handful of fields from the raw data. The **try-sofa** branch pulls in some extra fields and then derives the SOFA score.
 
