@@ -19,6 +19,7 @@ data_fields <- yaml::yaml.load_file("../config/data_fields.yaml")
 cct <- create.cctable(ccd, freq=1, conf=data_fields)
 
 # Original (raw) data
+
 str(cct$torigin)
 
 # Clean data
@@ -29,6 +30,10 @@ cct$filter.missingness()
 
 # Report validation
 cct$dfilter
+
+# # GCS example
+# summary(cct$torigin$NIHR_HIC_ICU_0156)
+# summary(cct$torigin$NIHR_HIC_ICU_0156[cct$dfilter$range$entry$NIHR_HIC_ICU_0156])
 
 # Specifically examine for missingness
 cct$dfilter$missingness$episode

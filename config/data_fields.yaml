@@ -1,13 +1,17 @@
+AGE:
+  shortName: age
+  dataItem: age (years)
 NIHR_HIC_ICU_0108:
   shortName: hrate
   dataItem: Heart rate
   distribution: normal
   decimal_places: 0
   range:
+    # an example of the open/closed interval notation for specifying a range
     labels:
-      red: (0, 300)
-      amber: (11, 170) 
-      green: (60, 100)
+      red: "[1, 256)"
+      amber: "[11, 170)"
+      green: "[60, 100)"
     apply: drop_entry
   missingness:
     labels:
@@ -36,4 +40,330 @@ NIHR_HIC_ICU_0097:
       A: Alive
       D: Dead
       E: Alive - not discharged
+    apply: drop_entry
+NIHR_HIC_ICU_0411:
+  shortName: icu_start
+  dataItem: Date & Time of admission to your unit
+NIHR_HIC_ICU_0412:
+  shortName: icu_stop
+  dataItem: Date & Time of discharge from your unit
+  dateandtime: no
+NIHR_HIC_ICU_0151:
+  shortName: peep
+  dataItem: Positive End Expiratory Pressure
+
+NIHR_HIC_ICU_0112:
+  shortName: bp_sys_a
+  dataItem: Systolic Arterial blood pressure - Art BPSystolic Arterial blood pressure
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: (0, 300)
+      amber: (50, 220) 
+      green: (80, 120)
+    apply: drop_entry
+NIHR_HIC_ICU_0113:
+  shortName: bp_sys_ni
+  dataItem: Systolic Arterial blood pressure - NBPSystolic Arterial blood pressure
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: (0, 300)
+      amber: (50, 220) 
+      green: (80, 120) 
+    apply: drop_entry
+NIHR_HIC_ICU_0114:
+  shortName: bp_dia_a
+  dataItem: Diastolic arterial blood pressure - Art BPDiastolic arterial blood pressure
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: (0, 250)
+      amber: (20, 150)
+      green: (50, 80) 
+    apply: drop_entry
+NIHR_HIC_ICU_0115:
+  shortName: bp_dia_ni
+  dataItem: Diastolic arterial blood pressure - NBPDiastolic arterial blood pressure
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: (0, 250)
+      amber: (20, 150)
+      green: (50, 80) 
+    apply: drop_entry
+NIHR_HIC_ICU_0110:
+  shortName: bp_m_a
+  dataItem: Mean arterial blood pressure - Art BPMean arterial blood pressure
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: (0, 270)
+      amber: (30, 175) 
+      green: (60, 95)
+    apply: drop_entry
+NIHR_HIC_ICU_0111:
+  shortName: bp_m_ni
+  dataItem: Mean arterial blood pressure - NBPMean arterial blood pressure
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: (0, 270)
+      amber: (30, 175) 
+      green: (60, 95)
+    apply: drop_entry
+NIHR_HIC_ICU_0398:
+  shortName: adm_type
+  dataItem: Admission type
+  distribution: nominal
+  category:
+    levels:
+      L: unplanned Local admission
+      U: Unplanned transfer in
+      P: Planned transfer in
+      S: planned local Surgical admission
+      M: planned local Medical admission
+      R: Repatriation
+    apply: drop_entry
+NIHR_HIC_ICU_0068:
+  shortName: loca_in
+  dataItem: Location (in)
+  distribution: nominal
+  category:
+    levels:
+      W: Ward
+      B: oBstetric area
+      M: other interMediate care area
+      P: Paediatric/neonatal ICU/HCU
+      I: level 3 bed in adult ICU or ICU/HDU
+      H: level 2 bed in adult ICU or ICU/HDU
+      U: adUlt HCU
+      T: Theatre & recovery
+      E: accident & Emergency
+      R: Recovery only
+      G: imaGing department
+      S: Specialist treatment area
+      C: Clinic
+      N: Not in hospital
+    apply: drop_entry
+NIHR_HIC_ICU_0027:
+  shortName: ncepod
+  dataItem: classification of surgery
+  distribution: nominal
+  category:
+    levels:
+      M: Emergency
+      U: Urgent
+      S: Scheduled
+      L: eLective
+    apply: drop_entry
+NIHR_HIC_ICU_0399:
+  shortName: diag_admx1
+  dataItem: Primary reason for admission to your unit
+  distribution: nomimal
+NIHR_HIC_ICU_0095:
+  shortName: dead_hosp
+  dataItem: Status at discharge from your hospital
+  distribution: binary
+  category:
+    levels:
+      A: Alive
+      D: Dead
+      E: Alive - not discharged
+    apply: drop_entry
+NIHR_HIC_ICU_0470:
+  shortName: rx_norad
+  dataItem: Noradrenaline
+  distribution: normal
+  decimal_places: 2
+  range:
+    labels:
+      red: "[0, 3)" # 0 <= rx_norad < 3
+      amber: "[0, 1)"
+    apply: drop_entry
+NIHR_HIC_ICU_0465:
+  shortName: rx_adre
+  dataItem: Adrenaline
+  distribution: normal
+  decimal_places: 2
+  range:
+    labels:
+      red: "[0, 3)"
+      amber: "[0, 1)"
+    apply: drop_entry
+NIHR_HIC_ICU_0466:
+  shortName: rx_dobu
+  dataItem: Dobutamine
+  distribution: normal
+  decimal_places: 1
+  range:
+    labels:
+      red: "[0, 50)"
+      amber: "[0, 25)"
+      green: "[0, 15)"
+    apply: drop_entry
+NIHR_HIC_ICU_0467:
+  shortName: rx_dopa
+  dataItem: Dopamine
+  distribution: normal
+  decimal_places: 1
+  range:
+    labels:
+      red: "[0, 50)"
+      amber: "[0, 25)"
+      green: "[0, 5)"
+    apply: drop_entry
+NIHR_HIC_ICU_0462:
+  shortName: propofol
+  dataItem: Propofol
+  distribution: normal
+  decimal_places: 0
+  missingness:
+    range_red: 24
+    range_yellow: 1
+NIHR_HIC_ICU_0242:
+  shortName: fentanyl
+  dataItem: Fentanyl
+  distribution: normal
+  decimal_places: 0
+  missingness:
+    range_red: 24
+    range_yellow: 1
+NIHR_HIC_ICU_0184:
+  shortName: platelets
+  dataItem: Platelets
+  distribution: skewed
+  decimal_places: 0
+  range:
+    labels:
+      red: "[0,5000)"
+      amber: "[0,1000)"
+      green: "[150, 400)"
+    apply: drop_entry
+NIHR_HIC_ICU_0174:
+  shortName: bili
+  dataItem: Bilirubin
+  distribution: skewed
+  decimal_places: 0
+  range:
+    labels:
+      red: "[1,1000)"
+      amber: "[5,500)"
+      green: "[3, 20)"
+    apply: drop_entry
+NIHR_HIC_ICU_0132:
+  shortName: pao2
+  dataItem: PaO2 - ABG
+  distribution: normal
+  decimal_places: 2
+  Units: kPa
+  range:
+    labels:
+      red: (0,100)
+    apply: drop_entry
+NIHR_HIC_ICU_0549:
+  shortName: rrate.spont
+  dataItem: Spontaneous Respiratory Rate
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: "[0, 120]"
+      amber: "[4, 100)"
+      green: "[12, 40)"
+    apply: drop_entry
+NIHR_HIC_ICU_0146:
+   shortName: rr.vent
+   dataItem: Total respiratory rate (ventilator)
+   distribution: normal
+   decimal_places: 0
+   range:
+    labels:
+      red: "[0, 120]"
+      amber: "[4, 100)"
+      green: "[12, 40)"
+    apply: drop_entry  
+NIHR_HIC_ICU_0144:
+  shortName: ippv
+  dataItem: Invasive or non-invasive (ventilation)
+  distribution: binary
+  category:
+    levels:
+      1: invasive ventilation
+      2: non-invasive ventilation
+    apply: drop_entry
+NIHR_HIC_ICU_0129:
+  shortName: spo2
+  dataItem: SpO2
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: "[0,50)"
+      amber: "[50,70)"
+      green: "[70,100]"
+    apply: drop_entry
+NIHR_HIC_ICU_0550:
+  shortName: tidal.vol
+  dataItem: Tidal volume
+  distribution: normal
+  decimal_places: 0
+  missingness:
+    range_red: 24
+    range_yellow: 1
+NIHR_HIC_ICU_0150:
+  shortName: fio2
+  dataItem: Inspired fraction of oxygen
+  distribution: normal
+  decimal_places: 2
+  range:
+    labels:
+      red: "[21,100]"
+    apply: drop_entry
+NIHR_HIC_ICU_0166:
+  shortName: creatinine
+  dataItem: Creatinine
+  distribution: normal
+  decimal_places: 0
+  range:
+    labels:
+      red: "[10000,100000]"
+      amber: "[5000,10000)"
+      green: "[10,5000)"
+    apply: drop_entry
+NIHR_HIC_ICU_0162:
+  shortName: urine1h
+  dataItem: Urine output (hourly) 
+  distribution: normal
+  decimal_places: 0
+  range:
+      labels:
+          red: "[1000,10000]"
+          amber: "[500,1000)"
+          green: "[0,500)"
+      apply: drop_entry
+NIHR_HIC_ICU_0161:
+  shortName: rrt
+  dataItem: Renal replacement mode
+  distribution: nominal
+  category:
+    levels:
+      1: CVVHF
+      2: CVVHDF
+    apply: drop_entry
+NIHR_HIC_ICU_0156:
+  shortName: gcs
+  dataItem: GCS - total
+  distribution: ordinal
+  decimal_places: 0
+  range:
+    labels:
+      red: "[0,3), [16,100]"
+      green: "[3,15]"
     apply: drop_entry
