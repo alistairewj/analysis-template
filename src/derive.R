@@ -42,10 +42,10 @@ table(cc$ppv)
 
 # - [ ] NOTE(2016-11-30): NA will be returned if variables not concurrent
 # Generate SOFA scores
-gen_sofa_c(cc, map_=map, norad_=rx_norad, adr_=rx_adre, dopa_=rx_dopa, dobu_=rx_dobu) 
+gen_sofa_c(cc, map_=map, norad_=rx_norad, adr_=rx_adre, dopa_=rx_dopa, dobu_=rx_dobu)
 table(cc$sofa_c, useNA="always")
 
-cc[,pf := pao2/fiO2 * 100]
+cc[,pf := pao2/fio2 * 100]
 gen_sofa_r(cc, pf_ = pf, ppv_ = ppv)
 table(cc$sofa_r, useNA="always")
 
