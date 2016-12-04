@@ -1,8 +1,8 @@
 # Derive secondary variables
 # ccfun library
+library(ccfun)
 library(assertthat)
 install_github("CC-HIC/ccfun") # will only install if there is an update
-library(ccfun)
 
 # Load data
 cc <- readRDS(file="../data/cc.RDS")
